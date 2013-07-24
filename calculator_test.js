@@ -50,3 +50,9 @@ test("verifies that calculator can handle blank operator", function() {
     equal(result, "error");
     equal($('#validation').text(), "un-supported operation");
 });
+
+test("verifies that calculator can handle invalid operators", function() {
+    var result = calculate(1, 1, ":)");
+    equal(result, "error");
+    equal($('#validation').text(), "un-supported operation");
+});
